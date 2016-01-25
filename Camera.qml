@@ -16,9 +16,22 @@ Item {
     }
 
     CameraListButton {
-        anchors.fill: parent
-
+        id: cameraList
+        x: 0
+        y: 0
+        width: 1280
+        height: 800
         model: QtMultimedia.availableCameras
         onValueChanged: camera.deviceId = value
+    }
+
+    MouseArea {
+        id: rootArea
+        anchors.fill: parent
+        onClicked: {
+            cameraList.x = mouseX;
+            cameraList.y = mouseY;
+            cameraList.toggle();
+        }
     }
 }

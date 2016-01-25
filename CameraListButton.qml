@@ -11,11 +11,7 @@ Rectangle {
     property alias value: cameraList.currentValue
     property alias model: cameraList.model
 
-    MouseArea {
-        id: listViewButtonArea
-        anchors.fill: parent
-        onClicked: cameraList.toggle()
-    }
+    function toggle() { cameraList.toggle(); }
 
     PopupList {
         id: cameraList
